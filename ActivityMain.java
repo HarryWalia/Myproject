@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showLogoutDialog() {
+        if(!isFinishing()){
         if (dialog != null && !dialog.isShowing()) {
             DisplayMetrics displayMetrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -82,5 +83,6 @@ public class MainActivity extends AppCompatActivity {
             this.dialog.getWindow().setLayout((int) (width * 0.86), (int) (ViewGroup.LayoutParams.WRAP_CONTENT));
             dialog.show();
         }
+    }
     }
 }
